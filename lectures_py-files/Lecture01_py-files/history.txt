@@ -1,0 +1,49 @@
+
+
+
+clear all
+close all
+
+
+load tree
+figure,imagesc(IN),colormap gray
+figure,imagesc(IN),colormap pink
+figure,imagesc(IN),colormap jet
+a=[1,2;3,4]
+figure,imagesc(a),colormap gray
+mymap=gray
+mymap(end,1)=1
+mymap(end,2)=0
+mymap(end,3)=0
+figure,imagesc(a),colormap(mymap)
+[A,B]=meshgrid(1:64);
+figure,imagesc(A),colormap gray
+figure,imagesc(A),colormap(mymap)
+mymap(3,1)=0;
+mymap(3,2)=0;
+mymap(3,3)=1;
+figure,imagesc(A),colormap(mymap)
+figure,imagesc(IN),colormap gray
+figure,imagesc(IN(1:10:end,1:10:end)),colormap gray
+figure,imagesc(IN(1:5:end,1:5:end)),colormap gray
+clear all
+close all
+load tree
+figure,imagesc(IN(1:1:end,1:1:end)),colormap gray
+figure,imagesc(IN(1:4:end,1:4:end)),colormap gray
+figure,imagesc(IN(1:4:end,1:4:end)),colormap gray(8)
+figure,imagesc(IN(1:1:end,1:1:end)),colormap gray(8)
+figure,imagesc(IN(1:1:end,1:1:end)),colormap gray(4)
+
+
+clear all
+close all
+
+img=imread('left_#290.bmp','bmp');
+figure,image(img)
+img_out=demosaicing(img);
+figure,image(img_out)
+
+zooming
+
+
